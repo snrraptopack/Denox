@@ -7,6 +7,7 @@ interface Response {
     headers: Headers;
     body: string;
     send: (body: string, status?: number) => void;
+    html: (body:string,status?:number)=>void;
     json: (body: any, status?: number) => void;
     redirect: (url: string, status?: number) => void;
 }
@@ -146,6 +147,11 @@ class MiniFramework {
                             redirect: (url: string, status: number = 302) => {
                                 context.res.status = status;
                                 context.res.headers.set("Location", url);
+                            },
+                            html: (body: string, status: number = 200) => {
+                                context.res.body = body;
+                                context.res.status = status;
+                                context.res.headers.set("Content-Type", "text/html");
                             }
                         }
                     };
