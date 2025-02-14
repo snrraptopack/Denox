@@ -14,8 +14,7 @@ This project is a simple TypeScript-based web server with various file based rou
 
 ### Prerequisites
 
-- Node.js
-- Deno (if using Deno runtime)
+- deno task dev
 
 ### Installation
 
